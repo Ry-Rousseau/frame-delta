@@ -44,3 +44,15 @@ img-entity-name - Main subject in Article Image
 img-entity-sentiment - Sentiment towards the subject in Article image
 img-entity-sentiment-exp - Explanation of image sentiment
 gpt-topic - Consolidated topic
+
+
+technical instructions:
+
+Always avoid emojis
+
+I'm working in a conda environment called torch-gpu, when running bash commands, firstly please run:
+conda activate torch-gpu
+
+this will activate torch-gpu in your own environment
+
+avoid creating uni-task scripts, including scripts for minute technical tasks. If you do, then please delete them after they have served their purpose.
