@@ -209,3 +209,4 @@ notebooks/test_results
 
 scraping_junk
 urls_to_crawl.txt
+notebooks/saved_models/

@@ -45,8 +45,12 @@ img-entity-sentiment - Sentiment towards the subject in Article image
 img-entity-sentiment-exp - Explanation of image sentiment
 gpt-topic - Consolidated topic
 
+## Down-stream evaluation
 
-technical instructions:
+After framing prediction model is completed, then we might evaluate it on a key real world benchmark- the 
+
+
+## assistance instructions
 
 Always avoid emojis
 
