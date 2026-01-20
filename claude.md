@@ -60,3 +60,25 @@ conda activate torch-gpu
 this will activate torch-gpu in your own environment
 
 avoid creating uni-task scripts, including scripts for minute technical tasks. If you do, then please delete them after they have served their purpose.
+
+
+## Framing Classifier Work
+
+**Objective:** Develop a lightweight multi-label classification model to detect 15 generic media frames (e.g., "Economic," "Fairness," "Legality") for social network analysis.
+
+**Current Architecture:**
+
+* **Base Model:** `roberta-base` (initially experimented with) transitioning to `allenai/longformer-base-4096`.
+* **Input Strategy:** Moved from "Head+Tail" truncation (first 320 + last 190 tokens) to full-text input via Longformer to capture mid-document context.
+* **Loss Function:** `BCEWithLogitsLoss` utilizing `pos_weight` to penalize missing rare classes (handling 1:50 class imbalances).
+
+**Key Experiments & Findings: from the framing_classier.ipynb**
+
+* **Baseline (Run 1):** `roberta-base` with truncation plateaued at **~0.73 Micro F1**. Post-training threshold optimization (tuning decision boundaries per class) yielded a ~1.1% global performance gain.
+* **Weighted Loss (Run 2):** Implementing class weights improved Recall significantly (+1.6%) but hurt Precision. Overall F1 remained tied with the baseline, suggesting an information bottleneck in the input data.
+* **Mixture of Experts Hypothesis (Run 3):** A test run training only on "Politics" articles showed massive performance jumps in nuanced frames (**Legality +8%**, **Fairness +8%**). This proved that frame definitions are context-dependent (e.g., "Fairness" means different things in Sports vs. Politics).
+
+**Current Strategy:**
+
+* **Topic Injection:** To operationalize the "Mixture of Experts" gains without maintaining multiple models, we are injecting the `gpt_topic` metadata directly into the input text (e.g., `"[TOPIC: Politics] Article text..."`). This provides the domain signal needed to resolve frame ambiguity.
+* **Longformer Implementation:** Adopting Longformer with **Global Attention** set on the `[CLS]` token and injected topic tokens to aggregate context from the entire document.
