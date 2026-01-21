@@ -49,6 +49,48 @@ gpt-topic - Consolidated topic
 
 After framing prediction model is completed, then we might evaluate it on a key real world benchmark- the 
 
+## How was the data above collected? Is it good data?
+
+Authors used Mistral-7B-Instruct-v0.3 available via huggingface 5
+with vLLM for high-throughput and memory-efficient
+inference and set the parameters as temperature=0.2, max_tokens=4000 dtype=’half’ and max_model_len=8096. In essence they used prompt engineering to instruct the model to read the text and fit classifications into set frames. The original model performance is as follows, testing against the gold-standard media frames corpus.
+
+| Label        | Precision | Recall | F1-score |
+| ------------ | --------: | -----: | -------: |
+| cap&res      |      0.39 |   0.34 |     0.36 |
+| crime        |      0.50 |   0.87 |     0.63 |
+| culture      |      0.38 |   0.37 |     0.37 |
+| economic     |      0.43 |   0.69 |     0.53 |
+| fairness     |      0.17 |   0.74 |     0.28 |
+| health       |      0.48 |   0.48 |     0.48 |
+| legality     |      0.53 |   0.87 |     0.66 |
+| morality     |      0.30 |   0.63 |     0.41 |
+| policy       |      0.40 |   0.73 |     0.51 |
+| political    |      0.68 |   0.53 |     0.60 |
+| public_op    |      0.32 |   0.55 |     0.40 |
+| quality_life |      0.28 |   0.36 |     0.31 |
+| regulation   |      0.26 |   0.48 |     0.34 |
+| security     |      0.30 |   0.45 |     0.36 |
+| micro avg    |      0.42 |   0.62 |     0.50 |
+| macro avg    |      0.39 |   0.58 |     0.45 |
+| weighted avg |      0.45 |   0.62 |     0.51 |
+| samples avg  |      0.46 |   0.63 |     0.51 |
+
+## Dataset Quality Analysis
+
+**The Ceiling Problem:** Our distilled models achieve ~0.73 Micro F1, but this is measured against Mistral's labels, not the gold standard. Since Mistral itself only achieves 0.50 F1 against the Media Frames Corpus, we're successfully replicating noisy behavior.
+
+**Why Longformer matches RoBERTa:** Both architectures hit the same ceiling - replicating inconsistent labels. Additional context doesn't help when the labels themselves are unreliable.
+
+**Why Run 3 (Politics-only) worked:** Within a single domain, Mistral likely applied frames more consistently. The model could learn a cleaner signal even if not gold-standard accurate.
+
+**Per-Class Reliability (based on Mistral's gold-standard performance):**
+- **Reliable:** Legality (0.66), Crime (0.63), Political (0.60)
+- **Moderate:** Economic (0.53), Policy (0.51), Health (0.48)
+- **Unreliable:** Fairness (0.28), Quality of Life (0.31), Regulation (0.34), Security (0.36), Cap & Res (0.36), Culture (0.37), Morality (0.41), Public Opinion (0.40)
+
+**Implication for Downstream Use:** For comparing *relative* framing differences between sources (CNN vs Fox), systematic biases may cancel out. Absolute frame detection will be noisy on unreliable classes.
+
 
 ## assistance instructions
 
@@ -82,3 +124,7 @@ avoid creating uni-task scripts, including scripts for minute technical tasks. I
 
 * **Topic Injection:** To operationalize the "Mixture of Experts" gains without maintaining multiple models, we are injecting the `gpt_topic` metadata directly into the input text (e.g., `"[TOPIC: Politics] Article text..."`). This provides the domain signal needed to resolve frame ambiguity.
 * **Longformer Implementation:** Adopting Longformer with **Global Attention** set on the `[CLS]` token and injected topic tokens to aggregate context from the entire document.
+
+
+## Link to a new test set - Sem Eval Task 3
+https://propaganda.math.unipd.it/semeval2023task3/teampage.php?passcode=2e9cfe6444bc6c23b3a19209ea58ba6f
