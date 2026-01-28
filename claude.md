@@ -153,3 +153,7 @@ Run 5 isolates the contribution of topic injection from full document context:
 
 ## Link to a new test set - Sem Eval Task 3
 https://propaganda.math.unipd.it/semeval2023task3/teampage.php?passcode=2e9cfe6444bc6c23b3a19209ea58ba6f
+
+# Another promising source of test / training data - FrAC: From Articles to Comments Datasets
+https://github.com/mattguida/FrAC/tree/main
+Which uses NYT and SFU Opinion Corpus as primary sources.
