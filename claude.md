@@ -7,9 +7,10 @@ To build a lightweight, real-time tool that quantifies "Framing Bias" between ne
 * **Output:** "Source A focuses on *Morality* (60%), Source B focuses on *Economics* (40%)."
 
 ## 2. The Architecture
-* **Model:** `distilbert-base-uncased` (Fine-tuned for Multi-Label Classification).
+* **Model:** `allenai/longformer-base-4096` with topic injection (production model).
 * **Task:** Multi-Label Text Classification (15 specific political frames).
 * **Hardware:** Single GPU (16GB VRAM).
+* **Best Performance:** Micro F1 0.755, Macro F1 0.733 (with optimized per-class thresholds).
 
 ## 3. The Dataset
 * **Source:** `copenlu/mm-framing` (Hugging Face).
@@ -78,18 +79,21 @@ inference and set the parameters as temperature=0.2, max_tokens=4000 dtype=’ha
 
 ## Dataset Quality Analysis
 
-**The Ceiling Problem:** Our distilled models achieve ~0.73 Micro F1, but this is measured against Mistral's labels, not the gold standard. Since Mistral itself only achieves 0.50 F1 against the Media Frames Corpus, we're successfully replicating noisy behavior.
+**The Ceiling Problem:** Our distilled models are measured against Mistral's labels, not the gold standard. Since Mistral itself only achieves 0.50 F1 against the Media Frames Corpus, we're learning to replicate Mistral's labeling behavior.
 
-**Why Longformer matches RoBERTa:** Both architectures hit the same ceiling - replicating inconsistent labels. Additional context doesn't help when the labels themselves are unreliable.
+**Longformer + Topic Injection Breakthrough:** Despite the label noise ceiling, Longformer with topic injection achieved meaningful gains over RoBERTa:
+- Micro F1: 0.755 (+2.4% vs RoBERTa generalist)
+- Macro F1: 0.733 (+2.7% vs RoBERTa generalist)
+- Wins 10/15 classes vs the politics-only expert model
 
-**Why Run 3 (Politics-only) worked:** Within a single domain, Mistral likely applied frames more consistently. The model could learn a cleaner signal even if not gold-standard accurate.
+**Why It Works:** Topic injection (`TOPIC: Politics\n...`) provides domain signal that helps the model resolve frame ambiguity. Full document context captures frames that appear in mid-article (Quality of Life +23%, Health +21%).
 
 **Per-Class Reliability (based on Mistral's gold-standard performance):**
 - **Reliable:** Legality (0.66), Crime (0.63), Political (0.60)
 - **Moderate:** Economic (0.53), Policy (0.51), Health (0.48)
 - **Unreliable:** Fairness (0.28), Quality of Life (0.31), Regulation (0.34), Security (0.36), Cap & Res (0.36), Culture (0.37), Morality (0.41), Public Opinion (0.40)
 
-**Implication for Downstream Use:** For comparing *relative* framing differences between sources (CNN vs Fox), systematic biases may cancel out. Absolute frame detection will be noisy on unreliable classes.
+**Implication for Downstream Use:** For comparing *relative* framing differences between sources (CNN vs Fox), systematic biases may cancel out. The Longformer model's improved Macro F1 means more balanced detection across all frame types.
 
 
 ## assistance instructions
@@ -108,22 +112,43 @@ avoid creating uni-task scripts, including scripts for minute technical tasks. I
 
 **Objective:** Develop a lightweight multi-label classification model to detect 15 generic media frames (e.g., "Economic," "Fairness," "Legality") for social network analysis.
 
-**Current Architecture:**
+**Production Architecture (Longformer + Topic Injection):**
 
-* **Base Model:** `roberta-base` (initially experimented with) transitioning to `allenai/longformer-base-4096`.
-* **Input Strategy:** Moved from "Head+Tail" truncation (first 320 + last 190 tokens) to full-text input via Longformer to capture mid-document context.
-* **Loss Function:** `BCEWithLogitsLoss` utilizing `pos_weight` to penalize missing rare classes (handling 1:50 class imbalances).
+* **Base Model:** `allenai/longformer-base-4096`
+* **Input Strategy:** Full text (max 2048 tokens) with `TOPIC:{topic}\n` prefix injection
+* **Loss Function:** `BCEWithLogitsLoss` with `pos_weight` for class imbalance
+* **Inference:** Per-class optimized thresholds (range 0.35-0.85)
+* **Performance:** Micro F1 0.755, Macro F1 0.733
 
-**Key Experiments & Findings: from the framing_classier.ipynb**
+**Key Experiments & Findings:**
 
-* **Baseline (Run 1):** `roberta-base` with truncation plateaued at **~0.73 Micro F1**. Post-training threshold optimization (tuning decision boundaries per class) yielded a ~1.1% global performance gain.
-* **Weighted Loss (Run 2):** Implementing class weights improved Recall significantly (+1.6%) but hurt Precision. Overall F1 remained tied with the baseline, suggesting an information bottleneck in the input data.
-* **Mixture of Experts Hypothesis (Run 3):** A test run training only on "Politics" articles showed massive performance jumps in nuanced frames (**Legality +8%**, **Fairness +8%**). This proved that frame definitions are context-dependent (e.g., "Fairness" means different things in Sports vs. Politics).
+* **Run 1 - RoBERTa Baseline:** Head+Tail truncation (510 tokens) achieved 0.731 Micro F1, 0.706 Macro F1.
+* **Run 2 - Weighted Loss:** No improvement over baseline. Recall +1.6%, Precision -1.0%, F1 unchanged.
+* **Run 3 - Politics Expert:** Domain-specific training hit 0.758 Micro F1 but poor Macro F1 (0.686). Proved frames are context-dependent.
+* **Run 4 - Longformer + Topic Injection:** Best overall for balanced performance. 0.755 Micro F1, 0.733 Macro F1. Wins 10/15 classes vs Run 3. Massive gains on rare classes (Quality of Life +23%, Health +21%, Capacity +14%).
+* **Run 5 - RoBERTa + Topic Injection (Ablation):** Applied topic injection back to RoBERTa with N=150k (all topics). Achieved 0.758 Micro F1, 0.686 Macro F1. Matches Longformer on Micro F1 but 4.7% worse on Macro F1, confirming full document context is critical for rare class detection.
 
-**Current Strategy:**
+**Why Longformer + Topic Injection Works:**
 
-* **Topic Injection:** To operationalize the "Mixture of Experts" gains without maintaining multiple models, we are injecting the `gpt_topic` metadata directly into the input text (e.g., `"[TOPIC: Politics] Article text..."`). This provides the domain signal needed to resolve frame ambiguity.
-* **Longformer Implementation:** Adopting Longformer with **Global Attention** set on the `[CLS]` token and injected topic tokens to aggregate context from the entire document.
+1. **Topic prefix** provides domain signal without needing separate models
+2. **Full context** captures mid-article framing (health details, lifestyle impacts)
+3. **Better calibration** - higher thresholds indicate more confident predictions
+4. **Single model** handles all topics with near-expert performance
+
+**Run 5 Ablation Insights (RoBERTa + Topic Injection):**
+
+Run 5 isolates the contribution of topic injection from full document context:
+
+| Factor | Micro F1 Impact | Macro F1 Impact |
+|--------|----------------|-----------------|
+| Topic injection alone (Run 5 vs Run 1) | +2.7% (0.731 -> 0.758) | -2.0% (0.706 -> 0.686) |
+| Full context (Longformer vs RoBERTa+Topic) | -0.3% | +4.7% |
+
+**Conclusion:** Topic injection drives Micro F1 gains (overall accuracy), but Longformer's full document context is essential for Macro F1 (rare class detection). For production use where balanced frame detection matters, Longformer remains the better choice despite being heavier.
+
+**Model Artifacts:**
+* Weights: `notebooks/saved_models/framing_training_runs_longformer/20260121_0143_longformer_topic_expert_v1/model_ep3.bin`
+* Thresholds: `notebooks/saved_models/framing_training_runs_longformer/20260121_0143_longformer_topic_expert_v1/class_thresholds_optimized.json`
 
 
 ## Link to a new test set - Sem Eval Task 3
