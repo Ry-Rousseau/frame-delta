@@ -210,3 +210,7 @@ notebooks/test_results
 scraping_junk
 urls_to_crawl.txt
 notebooks/saved_models/
+media_frames_corpus/search_queries/
+sem_eval_23/baselines/
+sem_eval_23/data/
+media_frames_corpus/test_download/

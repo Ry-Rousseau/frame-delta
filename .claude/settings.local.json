@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(conda activate:*)"
     ]
   }
 }

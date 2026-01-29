@@ -1,0 +1,121 @@
+{
+  "total_nyt_articles": 1443,
+  "docx_files_found": 172,
+  "matched": 154,
+  "unmatched_files": [
+    {
+      "file": "downloads\\batch_01\\Time to Turn the Illegal Tide.DOCX",
+      "filename_title": "Time to Turn the Illegal Tide",
+      "content_title": "Time to Turn the Illegal Tide"
+    },
+    {
+      "file": "downloads\\batch_02\\A 'JOKE' ABOUT ILLEGAL ALIENS STIRS CRITICS OF PRESCOTT BUSH.DOCX",
+      "filename_title": "A 'JOKE' ABOUT ILLEGAL ALIENS STIRS CRITICS OF PRESCOTT BUSH",
+      "content_title": "A 'JOKE' ABOUT ILLEGAL ALIENS STIRS CRITICS OF PRESCOTT BUSH"
+    },
+    {
+      "file": "downloads\\batch_02\\ABOUT LONG ISLAND JOURNAL.DOCX",
+      "filename_title": "ABOUT LONG ISLAND JOURNAL",
+      "content_title": "ABOUT LONG ISLAND JOURNAL"
+    },
+    {
+      "file": "downloads\\batch_02\\AMNESTY PLAN FOR ILLEGAL ALIENS SEEN AS COSTLY.DOCX",
+      "filename_title": "AMNESTY PLAN FOR ILLEGAL ALIENS SEEN AS COSTLY",
+      "content_title": "AMNESTY PLAN FOR ILLEGAL ALIENS SEEN AS COSTLY"
+    },
+    {
+      "file": "downloads\\batch_02\\ARRESTS OF ILLEGAL ALIENS INCREASE AS MEXICAN ECONOMY FALTERS.DOCX",
+      "filename_title": "ARRESTS OF ILLEGAL ALIENS INCREASE AS MEXICAN ECONOMY FALTERS",
+      "content_title": "ARRESTS OF ILLEGAL ALIENS INCREASE AS MEXICAN ECONOMY FALTERS"
+    },
+    {
+      "file": "downloads\\batch_02\\CITY'S IMMIGRANTS SHOW CONCERN AS ILLEGAL ALIENS BILL NEARS VOTE.DOCX",
+      "filename_title": "CITY'S IMMIGRANTS SHOW CONCERN AS ILLEGAL ALIENS BILL NEARS VOTE",
+      "content_title": "CITY'S IMMIGRANTS SHOW CONCERN AS ILLEGAL ALIENS BILL NEARS VOTE"
+    },
+    {
+      "file": "downloads\\batch_02\\COURT'S RULING ON ILLEGAL ALIENS_ A DOUBTFUL PRECEDENT; News Analysis.DOCX",
+      "filename_title": "COURT'S RULING ON ILLEGAL ALIENS_ A DOUBTFUL PRECEDENT; News Analysis",
+      "content_title": "COURT'S RULING ON ILLEGAL ALIENS: A DOUBTFUL PRECEDENT;\nNews Analysis"
+    },
+    {
+      "file": "downloads\\batch_02\\HIGH COURT BACKS FACTORY SEARCHES FOR ILLEGAL ALIENS.DOCX",
+      "filename_title": "HIGH COURT BACKS FACTORY SEARCHES FOR ILLEGAL ALIENS",
+      "content_title": "HIGH COURT BACKS FACTORY SEARCHES FOR ILLEGAL ALIENS"
+    },
+    {
+      "file": "downloads\\batch_02\\HOUSE COMMITTEE BACKS PENALTIES FOR THOSE WHO HIRE ILLEGAL ALIENS.DOCX",
+      "filename_title": "HOUSE COMMITTEE BACKS PENALTIES FOR THOSE WHO HIRE ILLEGAL ALIENS",
+      "content_title": "HOUSE COMMITTEE BACKS PENALTIES FOR THOSE WHO HIRE ILLEGAL ALIENS"
+    },
+    {
+      "file": "downloads\\batch_02\\HOUSE VOTES TO PROHIBIT EMPLOYING ILLEGAL ALIENS.DOCX",
+      "filename_title": "HOUSE VOTES TO PROHIBIT EMPLOYING ILLEGAL ALIENS",
+      "content_title": "HOUSE VOTES TO PROHIBIT EMPLOYING ILLEGAL ALIENS"
+    },
+    {
+      "file": "downloads\\batch_02\\JUSTICES WILL DECIDE ON LIMITATIONS FOR RAIDS FOR ILLEGAL ALIENS.DOCX",
+      "filename_title": "JUSTICES WILL DECIDE ON LIMITATIONS FOR RAIDS FOR ILLEGAL ALIENS",
+      "content_title": "JUSTICES WILL DECIDE ON LIMITATIONS FOR RAIDS FOR ILLEGAL ALIENS"
+    },
+    {
+      "file": "downloads\\batch_02\\NEW JERSEY JOURNAL; NEW JERSEY JOURNAL.DOCX",
+      "filename_title": "NEW JERSEY JOURNAL; NEW JERSEY JOURNAL",
+      "content_title": "NEW JERSEY JOURNAL;\nNEW JERSEY JOURNAL"
+    },
+    {
+      "file": "downloads\\batch_02\\NIGERIA 'S ILLEGAL ALIENS LEAVING AMID CHAOS.DOCX",
+      "filename_title": "NIGERIA 'S ILLEGAL ALIENS LEAVING AMID CHAOS",
+      "content_title": "NIGERIA'S ILLEGAL ALIENS LEAVING AMID CHAOS"
+    },
+    {
+      "file": "downloads\\batch_02\\SENATE VOTES TO DENY BENEFITS UNDER SOCIAL SECURITY TO ILLEGAL ALIENS.DOCX",
+      "filename_title": "SENATE VOTES TO DENY BENEFITS UNDER SOCIAL SECURITY TO ILLEGAL ALIENS",
+      "content_title": "SENATE VOTES TO DENY BENEFITS UNDER SOCIAL SECURITY TO ILLEGAL ALIENS"
+    },
+    {
+      "file": "downloads\\batch_02\\SOME HARD CHOICES EMERGE IN DEBATE ON ILLEGAL ALIENS.DOCX",
+      "filename_title": "SOME HARD CHOICES EMERGE IN DEBATE ON ILLEGAL ALIENS",
+      "content_title": "SOME HARD CHOICES EMERGE IN DEBATE ON ILLEGAL ALIENS"
+    },
+    {
+      "file": "downloads\\batch_02\\SUPREME COURT ROUNDUP; JUSTICES DECLARE ILLEGAL ALIENS ARE PROTECTED BY LABOR LAW.DOCX",
+      "filename_title": "SUPREME COURT ROUNDUP; JUSTICES DECLARE ILLEGAL ALIENS ARE PROTECTED BY LABOR LAW",
+      "content_title": "SUPREME COURT ROUNDUP;\nJUSTICES DECLARE ILLEGAL ALIENS ARE PROTECTED BY LABOR LAW"
+    },
+    {
+      "file": "downloads\\batch_02\\THE JOBS ILLEGAL ALIENS TAKE FROM AMERICANS.DOCX",
+      "filename_title": "THE JOBS ILLEGAL ALIENS TAKE FROM AMERICANS",
+      "content_title": "THE JOBS ILLEGAL ALIENS TAKE FROM AMERICANS"
+    },
+    {
+      "file": "downloads\\batch_02\\TWO MEN WHO FASHIONED IMMIGRATION BILL AND LED IT THROUGH CONGRESS ; SENATOR ALAN SIMPSON'S INTERVEN.DOCX",
+      "filename_title": "TWO MEN WHO FASHIONED IMMIGRATION BILL AND LED IT THROUGH CONGRESS ; SENATOR ALAN SIMPSON'S INTERVEN",
+      "content_title": "TWO MEN WHO FASHIONED IMMIGRATION BILL AND LED IT THROUGH CONGRESS;\nSENATOR ALAN SIMPSON'S INTERVENTION WITH O'NEILL LED TO HOUSE DEBATE"
+    }
+  ],
+  "unmatched_files_count": 18,
+  "missing_articles_count": 1295,
+  "missing_articles_sample": [
+    "Immigration1.0-7982",
+    "Immigration1.0-27529",
+    "Immigration1.0-36408",
+    "Immigration1.0-40761",
+    "Immigration1.0-2063",
+    "Immigration1.0-37480",
+    "Immigration1.0-35698",
+    "Immigration1.0-34162",
+    "Immigration1.0-35735",
+    "Immigration1.0-19486",
+    "Immigration1.0-12970",
+    "Immigration1.0-2123",
+    "Immigration1.0-35266",
+    "Immigration1.0-84",
+    "Immigration1.0-39472",
+    "Immigration1.0-16596",
+    "Immigration1.0-19179",
+    "Immigration1.0-20279",
+    "Immigration1.0-9864",
+    "Immigration1.0-16514"
+  ]
+}

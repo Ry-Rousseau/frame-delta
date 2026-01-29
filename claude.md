@@ -21,34 +21,29 @@ To build a lightweight, real-time tool that quantifies "Framing Bias" between ne
 ## Dataset variables
 
 Column name descriptions:
-uuid - Unique ID for each article
-title - Title of the article
-date_publish - Publication date
-source_domain - Domain of the publisher
-url - Article URL
-political_leaning - Political leaning of the publisher
+* uuid - Unique ID for each article
+* title - Title of the article
+* date_publish - Publication date
+* source_domain - Domain of the publisher
+* url - Article URL
+* political_leaning - Political leaning of the publisher
 
----------- Annotations ---------------
+* text-topic - Article topic generated from article text
+* text-topic-exp - Article topic explanation
+* text-entity-name - Main entity in article text
+* text-entity-sentiment - Sentiment towards main entity
+* text-entity-sentiment-exp - Explanation of text sentiment
+* text-generic-frame - Generic Frame used in Article text
+* text-generic-frame-exp - Generic Frame in text explanation
+* text-issue-frame - Issue Frame used in article text
+* text-issue-frame-exp - Issue Frame explanation
+* img-generic-frame - Generic Frame used in Article Image
+* img-frame-exp - Generic Frame in image explanation
+* img-entity-name - Main subject in Article Image
+* img-entity-sentiment - Sentiment towards the subject in Article image
+* img-entity-sentiment-exp - Explanation of image sentiment
+* gpt-topic - Consolidated topic
 
-text-topic - Article topic generated from article text
-text-topic-exp - Article topic explanation
-text-entity-name - Main entity in article text
-text-entity-sentiment - Sentiment towards main entity
-text-entity-sentiment-exp - Explanation of text sentiment
-text-generic-frame - Generic Frame used in Article text
-text-generic-frame-exp - Generic Frame in text explanation
-text-issue-frame - Issue Frame used in article text
-text-issue-frame-exp - Issue Frame explanation
-img-generic-frame - Generic Frame used in Article Image
-img-frame-exp - Generic Frame in image explanation
-img-entity-name - Main subject in Article Image
-img-entity-sentiment - Sentiment towards the subject in Article image
-img-entity-sentiment-exp - Explanation of image sentiment
-gpt-topic - Consolidated topic
-
-## Down-stream evaluation
-
-After framing prediction model is completed, then we might evaluate it on a key real world benchmark- the 
 
 ## How was the data above collected? Is it good data?
 
@@ -151,9 +146,9 @@ Run 5 isolates the contribution of topic injection from full document context:
 * Thresholds: `notebooks/saved_models/framing_training_runs_longformer/20260121_0143_longformer_topic_expert_v1/class_thresholds_optimized.json`
 
 
-## Link to a new test set - Sem Eval Task 3
-https://propaganda.math.unipd.it/semeval2023task3/teampage.php?passcode=2e9cfe6444bc6c23b3a19209ea58ba6f
+# Further human-labelled training and test data
 
-# Another promising source of test / training data - FrAC: From Articles to Comments Datasets
-https://github.com/mattguida/FrAC/tree/main
-Which uses NYT and SFU Opinion Corpus as primary sources.
+* Sem Eval Task 3 in `/sem_eval_23`, see readme there
+* From Articles to Comments in `/FrAC folder`
+    * Utilize the `gold_standard_single_label_all.csv` for human encoded labels on internet comment comments
+* Media Frames Corpus - large-scale human labelled data of NYT articles (best data source we have) in `/media_frames_corpus`
