@@ -214,3 +214,10 @@ media_frames_corpus/search_queries/
 sem_eval_23/baselines/
 sem_eval_23/data/
 media_frames_corpus/test_download/
+media_frames_corpus/samesex_queries/
+media_frames_corpus/smoking_queries/
+media_frames_corpus/immigration_corpus.csv
+*.parquet
+media_frames_corpus/immigration_corpus.csv
+media_frames_corpus/immigration_corpus.parquet
+media_frames_corpus/final_data/

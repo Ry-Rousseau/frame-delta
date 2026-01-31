@@ -2,27 +2,27 @@
 Assemble the Media Frames Corpus dataset from downloaded DOCX files.
 
 Usage:
-    python assemble_dataset.py
+    python assemble_dataset.py [topic]
+
+    topic: immigration (default), smoking, or samesex
 
 Expected structure:
     media_frames_corpus/
-        downloads/
-            batch_01/
-                Article Title.DOCX
-                ...
-            batch_02/
-                ...
+        downloads/              <- for immigration
+        smoking_downloads/      <- for smoking
+        samesex_downloads/      <- for samesex
         immigration.json
-        codes.json
+        smoking.json
+        samesex.json
 
 Output:
-    media_frames_corpus/
-        immigration_corpus.parquet
-        immigration_corpus.csv
-        assembly_report.json
+    {topic}_corpus.parquet
+    {topic}_corpus.csv
+    {topic}_assembly_report.json
 """
 
 import json
+import sys
 import os
 import re
 from pathlib import Path
@@ -31,13 +31,24 @@ from collections import defaultdict
 import pandas as pd
 from docx import Document
 
-# Config
-INPUT_JSON = "immigration.json"
+# Config - set by command line arg
 CODES_JSON = "codes.json"
-DOWNLOADS_DIR = "downloads"
-OUTPUT_PARQUET = "immigration_corpus.parquet"
-OUTPUT_CSV = "immigration_corpus.csv"
-REPORT_FILE = "assembly_report.json"
+
+
+def get_topic_config(topic):
+    """Get file paths for a given topic."""
+    if topic == "immigration":
+        downloads_dir = "downloads"
+    else:
+        downloads_dir = f"{topic}_downloads"
+
+    return {
+        "input_json": f"{topic}.json",
+        "downloads_dir": downloads_dir,
+        "output_parquet": f"{topic}_corpus.parquet",
+        "output_csv": f"{topic}_corpus.csv",
+        "report_file": f"{topic}_assembly_report.json",
+    }
 
 
 def normalize_title(title):
@@ -162,20 +173,30 @@ def extract_tone_labels(article):
 
 
 def main():
+    # Parse topic from command line
+    topic = sys.argv[1] if len(sys.argv) > 1 else "immigration"
+    if topic not in ["immigration", "smoking", "samesex"]:
+        print(f"Unknown topic: {topic}")
+        print("Usage: python assemble_dataset.py [immigration|smoking|samesex]")
+        sys.exit(1)
+
+    config = get_topic_config(topic)
+    print(f"Assembling {topic} corpus...")
+
     base_path = Path(__file__).parent
     os.chdir(base_path)
 
     # Load source data
     print("Loading source data...")
-    nyt_articles, title_lookup = load_nyt_articles(INPUT_JSON)
+    nyt_articles, title_lookup = load_nyt_articles(config["input_json"])
     codes = load_codes(CODES_JSON)
     print(f"  Loaded {len(nyt_articles)} NYT articles")
 
     # Scan downloads directory
-    downloads_path = base_path / DOWNLOADS_DIR
+    downloads_path = base_path / config["downloads_dir"]
     if not downloads_path.exists():
         print(f"ERROR: Downloads directory not found: {downloads_path}")
-        print("Please create the downloads/ folder and add batch subfolders with DOCX files.")
+        print(f"Please create the {config['downloads_dir']}/ folder and add batch subfolders with DOCX files.")
         return
 
     # Collect all DOCX files (case-insensitive, deduplicated)
@@ -268,12 +289,17 @@ def main():
     if matched:
         df = pd.DataFrame(matched)
 
+        # Fix column types
+        df['length'] = pd.to_numeric(df['length'], errors='coerce')
+        df['year'] = pd.to_numeric(df['year'], errors='coerce').astype('Int64')
+        df['month'] = pd.to_numeric(df['month'], errors='coerce').astype('Int64')
+
         # Save outputs
-        df.to_parquet(OUTPUT_PARQUET, index=False)
-        df.to_csv(OUTPUT_CSV, index=False)
+        df.to_parquet(config["output_parquet"], index=False)
+        df.to_csv(config["output_csv"], index=False)
         print(f"\nSaved {len(df)} articles to:")
-        print(f"  - {OUTPUT_PARQUET}")
-        print(f"  - {OUTPUT_CSV}")
+        print(f"  - {config['output_parquet']}")
+        print(f"  - {config['output_csv']}")
 
     # Save report
     report = {
@@ -286,9 +312,9 @@ def main():
         "missing_articles_sample": list(unmatched_articles)[:20],
     }
 
-    with open(REPORT_FILE, 'w', encoding='utf-8') as f:
+    with open(config["report_file"], 'w', encoding='utf-8') as f:
         json.dump(report, f, indent=2)
-    print(f"  - {REPORT_FILE}")
+    print(f"  - {config['report_file']}")
 
 
 if __name__ == "__main__":
