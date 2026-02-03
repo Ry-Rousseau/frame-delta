@@ -28,7 +28,7 @@ VAL_SPLIT = 0.05
 SEED = 42
 
 # Paths
-DATA_FILE = "data/tapt_articles.parquet"
+DATA_FILES = ["data/tapt_articles_part1.parquet", "data/tapt_articles_part2.parquet"]
 TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M")
 MODEL_SAVE_DIR = f"trained_models/mlm-longformer/longformer-news-base/{TIMESTAMP}"
 LOG_DIR = "training_logs/mlm-longformer/logs"
@@ -58,8 +58,11 @@ class ArticleMLMDataset(Dataset):
 
 
 def load_articles():
-    print(f"Loading articles from {DATA_FILE}...")
-    df = pd.read_parquet(DATA_FILE)
+    dfs = []
+    for f in DATA_FILES:
+        print(f"Loading {f}...")
+        dfs.append(pd.read_parquet(f))
+    df = pd.concat(dfs, ignore_index=True)
     return df["text"].tolist()
 
 
