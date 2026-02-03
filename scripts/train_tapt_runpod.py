@@ -120,7 +120,7 @@ def main():
         collate_fn=data_collator, num_workers=4, pin_memory=True
     )
 
-    model = LongformerForMaskedLM.from_pretrained("allenai/longformer-base-4096", trust_remote_code=True)
+    model = LongformerForMaskedLM.from_pretrained("allenai/longformer-base-4096", use_safetensors=True)
     model.to(device)
     model.gradient_checkpointing_enable()
 
