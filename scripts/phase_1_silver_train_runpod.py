@@ -454,7 +454,8 @@ def main():
     model = LongformerForSequenceClassification.from_pretrained(
         CONFIG['model'],
         num_labels=len(OFFICIAL_LABELS),
-        problem_type="multi_label_classification"
+        problem_type="multi_label_classification",
+        use_safetensors=True
     )
     model.to(device)
     model.gradient_checkpointing_enable()
@@ -529,7 +530,7 @@ def main():
 
         # Save checkpoint
         checkpoint_path = os.path.join(MODEL_SAVE_DIR, f"checkpoint_epoch_{epoch + 1}")
-        model.save_pretrained(checkpoint_path)
+        model.save_pretrained(checkpoint_path, safe_serialization=True)
         tokenizer.save_pretrained(checkpoint_path)
         print(f"  Checkpoint saved: {checkpoint_path}")
 
@@ -537,7 +538,7 @@ def main():
         if val_f1_micro > best_val_f1:
             best_val_f1 = val_f1_micro
             best_path = os.path.join(MODEL_SAVE_DIR, "best_model")
-            model.save_pretrained(best_path)
+            model.save_pretrained(best_path, safe_serialization=True)
             tokenizer.save_pretrained(best_path)
             run.summary["best_val_f1_micro"] = best_val_f1
             run.summary["best_epoch"] = epoch + 1
@@ -551,7 +552,10 @@ def main():
     print("=" * 70)
 
     # Load best model for threshold optimization
-    model = LongformerForSequenceClassification.from_pretrained(os.path.join(MODEL_SAVE_DIR, "best_model"))
+    model = LongformerForSequenceClassification.from_pretrained(
+        os.path.join(MODEL_SAVE_DIR, "best_model"),
+        use_safetensors=True
+    )
     model.to(device)
     model.eval()
 
