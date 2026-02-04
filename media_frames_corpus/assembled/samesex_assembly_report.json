@@ -1,0 +1,304 @@
+{
+  "total_nyt_articles": 1764,
+  "docx_files_found": 1958,
+  "matched_unique": 1562,
+  "duplicate_skips": 282,
+  "unmatched_no_match": 114,
+  "unmatched_files_sample": [
+    {
+      "file": "samesex_downloads\\batch_01\\Constitution Protects Same-Sex Marriages; AIDS Data Not in Peril.DOCX",
+      "filename_title": "Constitution Protects Same-Sex Marriages; AIDS Data Not in Peril",
+      "content_title": "Constitution Protects Same-Sex Marriages;\nAIDS Data Not in Peril"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Files(212)_deliverynotification.DOCX",
+      "filename_title": "Files(212)_deliverynotification",
+      "content_title": "User Name: = subscriber6349893"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Gay Couples Also Need Economic Benefits; Undermining Marriage.DOCX",
+      "filename_title": "Gay Couples Also Need Economic Benefits; Undermining Marriage",
+      "content_title": "Gay Couples Also Need Economic Benefits;\nUndermining Marriage"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(12).DOCX",
+      "filename_title": "Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(12)",
+      "content_title": "Votes in Congress;\nTally Last Week in Connecticut, New Jersey and New York - Correction Appended"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(9).DOCX",
+      "filename_title": "Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(9)",
+      "content_title": "Votes in Congress;\nTally Last Week in Connecticut, New Jersey and New York - Correction Appended"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Votes in Congress(14).DOCX",
+      "filename_title": "Votes in Congress(14)",
+      "content_title": "Votes in Congress - Correction Appended"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\'Corrections' Is Winner Of Top Prize For Fiction.DOCX",
+      "filename_title": "'Corrections' Is Winner Of Top Prize For Fiction",
+      "content_title": "'Corrections' Is Winner Of Top Prize For Fiction  - Correction Appended"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\2 Corrections Officers Arrested In Rape and Robbery at Brothel.DOCX",
+      "filename_title": "2 Corrections Officers Arrested In Rape and Robbery at Brothel",
+      "content_title": "2 Corrections Officers Arrested In Rape and Robbery at Brothel"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Ban on gay marriage would lessen USA.DOCX",
+      "filename_title": "Ban on gay marriage would lessen USA",
+      "content_title": "Ban on gay marriage would lessen USA"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Braun 'absolutely correct' on gay marriage.DOCX",
+      "filename_title": "Braun 'absolutely correct' on gay marriage",
+      "content_title": "Braun 'absolutely correct' on gay marriage"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Bush says constitutional ban on gay marriage not necessary - yet.DOCX",
+      "filename_title": "Bush says constitutional ban on gay marriage not necessary - yet",
+      "content_title": "Bush says constitutional ban on gay marriage not necessary - yet"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Bush says constitutional ban on gay marriage not needed -- yet.DOCX",
+      "filename_title": "Bush says constitutional ban on gay marriage not needed -- yet",
+      "content_title": "Bush says constitutional ban on gay marriage not needed -- yet"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\BUSH_ WAIT ON GAY MARRIAGE BAN.DOCX",
+      "filename_title": "BUSH_ WAIT ON GAY MARRIAGE BAN",
+      "content_title": "BUSH: WAIT ON GAY MARRIAGE BAN"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Canadians split on gay marriage.DOCX",
+      "filename_title": "Canadians split on gay marriage",
+      "content_title": "Canadians split on gay marriage"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Candidates Stand on Gay Marriage.DOCX",
+      "filename_title": "Candidates Stand on Gay Marriage",
+      "content_title": "Candidates Stand on Gay Marriage"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Cauchon's 'leadership' on gay marriage questioned.DOCX",
+      "filename_title": "Cauchon's 'leadership' on gay marriage questioned",
+      "content_title": "Cauchon's 'leadership' on gay marriage questioned"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Charter forced PM's 'courage' on gay marriage.DOCX",
+      "filename_title": "Charter forced PM's 'courage' on gay marriage",
+      "content_title": "Charter forced PM's 'courage' on gay marriage"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\CHENEY_ CONSERVATIVES CRITICIZE COMMENTS ON GAY MARRIAGE.DOCX",
+      "filename_title": "CHENEY_ CONSERVATIVES CRITICIZE COMMENTS ON GAY MARRIAGE",
+      "content_title": "CHENEY: CONSERVATIVES CRITICIZE COMMENTS ON GAY MARRIAGE"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\City's Corrections Chief Quits As Agency Comes Under Fire.DOCX",
+      "filename_title": "City's Corrections Chief Quits As Agency Comes Under Fire",
+      "content_title": "City's Corrections Chief Quits As Agency Comes Under Fire  - Correction Appended"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Commissioner of Corrections To Leave Post.DOCX",
+      "filename_title": "Commissioner of Corrections To Leave Post",
+      "content_title": "Commissioner of Corrections To Leave Post"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Committee approves ban on gay marriage.DOCX",
+      "filename_title": "Committee approves ban on gay marriage",
+      "content_title": "Committee approves ban on gay marriage"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Congressional candidates split on gay marriage question.DOCX",
+      "filename_title": "Congressional candidates split on gay marriage question",
+      "content_title": "Congressional candidates split on gay marriage question"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Corrections Bison Dele's Brother In Critical Condition.DOCX",
+      "filename_title": "Corrections Bison Dele's Brother In Critical Condition",
+      "content_title": "Corrections; Bison Dele's Brother In Critical Condition"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Corrections Correction_ Mutual Fund Performance.DOCX",
+      "filename_title": "Corrections Correction_ Mutual Fund Performance",
+      "content_title": "Corrections; Correction: Mutual Fund Performance"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Corrections Report Blames Guards for Escape of 7 in Texas.DOCX",
+      "filename_title": "Corrections Report Blames Guards for Escape of 7 in Texas",
+      "content_title": "Corrections Report Blames Guards for Escape of 7 in Texas"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Corrections to Articles by Jayson Blair.DOCX",
+      "filename_title": "Corrections to Articles by Jayson Blair",
+      "content_title": "Corrections to Articles by Jayson Blair"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Eves backs church on gay marriage.DOCX",
+      "filename_title": "Eves backs church on gay marriage",
+      "content_title": "Eves backs church on gay marriage"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Five Corrections Officers Are Charged in Beating of Inmate at Nassau 's Jail.DOCX",
+      "filename_title": "Five Corrections Officers Are Charged in Beating of Inmate at Nassau 's Jail",
+      "content_title": "Five Corrections Officers Are Charged in Beating of Inmate at Nassau's Jail"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\Free vote on gay marriage tests Liberal unity.DOCX",
+      "filename_title": "Free vote on gay marriage tests Liberal unity",
+      "content_title": "Free vote on gay marriage tests Liberal unity"
+    },
+    {
+      "file": "samesex_downloads\\batch_02\\GERMANY WILL RECRUIT FEMALE SOLDIERS; BRITAIN, GERMANY DIVERSIFY MILITARY; BRITISH BOW TO EUROPEAN C.DOCX",
+      "filename_title": "GERMANY WILL RECRUIT FEMALE SOLDIERS; BRITAIN, GERMANY DIVERSIFY MILITARY; BRITISH BOW TO EUROPEAN C",
+      "content_title": "GERMANY WILL RECRUIT FEMALE SOLDIERS;\nBRITAIN, GERMANY DIVERSIFY MILITARY;\nBRITISH BOW TO EUROPEAN COURT, LET GAYS SERVE OPENLY. COURT ORDERS GERMANS TO;\nALLOW WOMEN TO BEAR ARMS."
+    }
+  ],
+  "duplicate_files_sample": [
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(11).DOCX",
+      "filename_title": "METRO DIGEST(11)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(12).DOCX",
+      "filename_title": "METRO DIGEST(12)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(13).DOCX",
+      "filename_title": "METRO DIGEST(13)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(14).DOCX",
+      "filename_title": "METRO DIGEST(14)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(15).DOCX",
+      "filename_title": "METRO DIGEST(15)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(2).DOCX",
+      "filename_title": "METRO DIGEST(2)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(3).DOCX",
+      "filename_title": "METRO DIGEST(3)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(4).DOCX",
+      "filename_title": "METRO DIGEST(4)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(5).DOCX",
+      "filename_title": "METRO DIGEST(5)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(6).DOCX",
+      "filename_title": "METRO DIGEST(6)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(7).DOCX",
+      "filename_title": "METRO DIGEST(7)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(8).DOCX",
+      "filename_title": "METRO DIGEST(8)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST(9).DOCX",
+      "filename_title": "METRO DIGEST(9)",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\METRO DIGEST.DOCX",
+      "filename_title": "METRO DIGEST",
+      "content_title": "METRO DIGEST",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Religion Notes.DOCX",
+      "filename_title": "Religion Notes",
+      "content_title": "Religion Notes - Correction Appended",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(10).DOCX",
+      "filename_title": "Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(10)",
+      "content_title": "Votes in Congress;\nTally Last Week in Connecticut, New Jersey and New York",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(11).DOCX",
+      "filename_title": "Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(11)",
+      "content_title": "Votes in Congress;\nTally Last Week in Connecticut, New Jersey and New York",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(13).DOCX",
+      "filename_title": "Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(13)",
+      "content_title": "Votes in Congress;\nTally Last Week in Connecticut, New Jersey and New York",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(14).DOCX",
+      "filename_title": "Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(14)",
+      "content_title": "Votes in Congress;\nTally Last Week in Connecticut, New Jersey and New York",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "samesex_downloads\\batch_01\\Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(15).DOCX",
+      "filename_title": "Votes in Congress ; Tally Last Week in Connecticut , New Jersey and New York(15)",
+      "content_title": "Votes in Congress;\nTally Last Week in Connecticut, New Jersey and New York",
+      "reason": "duplicate_article_id"
+    }
+  ],
+  "missing_articles_count": 202,
+  "missing_articles_sample": [
+    "same-sex_marriage1.0-6295",
+    "same-sex_marriage1.0-10925",
+    "same-sex_marriage1.0-907",
+    "same-sex_marriage1.0-7167",
+    "same-sex_marriage1.0-749",
+    "same-sex_marriage1.0-431",
+    "same-sex_marriage1.0-800",
+    "same-sex_marriage1.0-11012",
+    "same-sex_marriage1.0-7280",
+    "same-sex_marriage1.0-5716",
+    "same-sex_marriage1.0-4452",
+    "same-sex_marriage1.0-2927",
+    "same-sex_marriage1.0-7323",
+    "same-sex_marriage1.0-1096",
+    "same-sex_marriage1.0-2988",
+    "same-sex_marriage1.0-7374",
+    "same-sex_marriage1.0-796",
+    "same-sex_marriage1.0-1459",
+    "same-sex_marriage1.0-1295",
+    "same-sex_marriage1.0-1484"
+  ]
+}

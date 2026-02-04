@@ -1,0 +1,304 @@
+{
+  "total_nyt_articles": 822,
+  "docx_files_found": 1100,
+  "matched_unique": 737,
+  "duplicate_skips": 248,
+  "unmatched_no_match": 115,
+  "unmatched_files_sample": [
+    {
+      "file": "smoking_downloads\\batch_01\\Aloft Without Nicotine_ Can Smokers Cope_.DOCX",
+      "filename_title": "Aloft Without Nicotine_ Can Smokers Cope_",
+      "content_title": "Aloft Without Nicotine: Can Smokers Cope? - Correction Appended"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Coming Back; Get Creative on Corrections.DOCX",
+      "filename_title": "Coming Back; Get Creative on Corrections",
+      "content_title": "Coming Back;\nGet Creative on Corrections"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\How to End the Scandal of Veterans' Hospitals; A Cruel Restriction.DOCX",
+      "filename_title": "How to End the Scandal of Veterans' Hospitals; A Cruel Restriction",
+      "content_title": "How to End the Scandal of Veterans' Hospitals;\nA Cruel Restriction"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Net Surges At Philip Morris.DOCX",
+      "filename_title": "Net Surges At Philip Morris",
+      "content_title": "Net Surges At Philip Morris - Correction Appended"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\New Chief For Philip Morris.DOCX",
+      "filename_title": "New Chief For Philip Morris",
+      "content_title": "New Chief For Philip Morris"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\New Pressures on Philip Morris.DOCX",
+      "filename_title": "New Pressures on Philip Morris",
+      "content_title": "New Pressures on Philip Morris"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Of Course They Manipulate Cigarette Nicotine; Not Addictive.DOCX",
+      "filename_title": "Of Course They Manipulate Cigarette Nicotine; Not Addictive",
+      "content_title": "Of Course They Manipulate Cigarette Nicotine;\nNot Addictive"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Chairman Unexpectedly Resigns.DOCX",
+      "filename_title": "Philip Morris Chairman Unexpectedly Resigns",
+      "content_title": "Philip Morris Chairman Unexpectedly Resigns"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Cigarette Vote.DOCX",
+      "filename_title": "Philip Morris Cigarette Vote",
+      "content_title": "Philip Morris Cigarette Vote"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Denies Charge By Lawmaker.DOCX",
+      "filename_title": "Philip Morris Denies Charge By Lawmaker",
+      "content_title": "Philip Morris Denies Charge By Lawmaker"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Elects Chief.DOCX",
+      "filename_title": "Philip Morris Elects Chief",
+      "content_title": "Philip Morris Elects Chief"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Executives Are Shuffled.DOCX",
+      "filename_title": "Philip Morris Executives Are Shuffled",
+      "content_title": "Philip Morris Executives Are Shuffled"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Files Lawsuit.DOCX",
+      "filename_title": "Philip Morris Files Lawsuit",
+      "content_title": "Philip Morris Files Lawsuit"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Profit More Than Doubles.DOCX",
+      "filename_title": "Philip Morris Profit More Than Doubles",
+      "content_title": "Philip Morris Profit More Than Doubles"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Profits Rise More Than 25%.DOCX",
+      "filename_title": "Philip Morris Profits Rise More Than 25%",
+      "content_title": "Philip Morris Profits Rise More Than 25%"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Revamping Its Food Unit.DOCX",
+      "filename_title": "Philip Morris Revamping Its Food Unit",
+      "content_title": "Philip Morris Revamping Its Food Unit"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Settles Charge on Cigarettes.DOCX",
+      "filename_title": "Philip Morris Settles Charge on Cigarettes",
+      "content_title": "Philip Morris Settles Charge on Cigarettes"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Share Price Plunges 5%.DOCX",
+      "filename_title": "Philip Morris Share Price Plunges 5%",
+      "content_title": "Philip Morris Share Price Plunges 5%"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris Shareholders In a Walkout.DOCX",
+      "filename_title": "Philip Morris Shareholders In a Walkout",
+      "content_title": "Philip Morris Shareholders In a Walkout"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Philip Morris to Enlarge Plant.DOCX",
+      "filename_title": "Philip Morris to Enlarge Plant",
+      "content_title": "Philip Morris to Enlarge Plant"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Agriculture_.DOCX",
+      "filename_title": "THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Agriculture_",
+      "content_title": "THE BUDGET AGREEMENT: The Executive View - Budget Pact Regarded As Mixed for Business;\nAgriculture: Paring the Core Of U.S. Policy"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Airlines_ Big.DOCX",
+      "filename_title": "THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Airlines_ Big",
+      "content_title": "THE BUDGET AGREEMENT: The Executive View - Budget Pact Regarded As Mixed for Business;\nAirlines: Bigger Burden For Fliers"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Alcoholic Bev.DOCX",
+      "filename_title": "THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Alcoholic Bev",
+      "content_title": "THE BUDGET AGREEMENT: The Executive View - Budget Pact Regarded As Mixed for Business;\nAlcoholic Beverages: Soft on Beer, Hard on Liquor"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Defense_ Afte.DOCX",
+      "filename_title": "THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Defense_ Afte",
+      "content_title": "THE BUDGET AGREEMENT: The Executive View - Budget Pact Regarded As Mixed for Business;\nDefense: After Iraq, Shallower Cuts"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Gasoline_ Cha.DOCX",
+      "filename_title": "THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Gasoline_ Cha",
+      "content_title": "THE BUDGET AGREEMENT: The Executive View - Budget Pact Regarded As Mixed for Business;\nGasoline: Charging Drivers, Helping Drillers"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Research_ An.DOCX",
+      "filename_title": "THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Research_ An",
+      "content_title": "THE BUDGET AGREEMENT: The Executive View - Budget Pact Regarded As Mixed for Business;\nResearch: An Incentive For Spending"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Small Busines.DOCX",
+      "filename_title": "THE BUDGET AGREEMENT_ The Executive View - Budget Pact Regarded As Mixed for Business; Small Busines",
+      "content_title": "THE BUDGET AGREEMENT: The Executive View - Budget Pact Regarded As Mixed for Business;\nSmall Business: Backing Goods Over Services"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\THE MEDIA BUSINESS_ ADVERTISING; Death cigarettes carry mixed message_ Don't smoke, but do buy this.DOCX",
+      "filename_title": "THE MEDIA BUSINESS_ ADVERTISING; Death cigarettes carry mixed message_ Don't smoke, but do buy this",
+      "content_title": "THE MEDIA BUSINESS: ADVERTISING;\nDeath cigarettes carry mixed message: Don't smoke, but do buy this product. - Correction Appended"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\To Save Lives, Raise Funds and Cut the Deficit_ Tax Tobacco; Please Don't Exhale.DOCX",
+      "filename_title": "To Save Lives, Raise Funds and Cut the Deficit_ Tax Tobacco; Please Don't Exhale",
+      "content_title": "To Save Lives, Raise Funds and Cut the Deficit: Tax Tobacco;\nPlease Don't Exhale"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Uneasy Partners _ Arts and Philip Morris.DOCX",
+      "filename_title": "Uneasy Partners _ Arts and Philip Morris",
+      "content_title": "Uneasy Partners: Arts and Philip Morris"
+    }
+  ],
+  "duplicate_files_sample": [
+    {
+      "file": "smoking_downloads\\batch_01\\BUSINESS DIGEST(5).DOCX",
+      "filename_title": "BUSINESS DIGEST(5)",
+      "content_title": "BUSINESS DIGEST",
+      "reason": "duplicate_title_all_matched"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\BUSINESS DIGEST(6).DOCX",
+      "filename_title": "BUSINESS DIGEST(6)",
+      "content_title": "BUSINESS DIGEST",
+      "reason": "duplicate_title_all_matched"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\BUSINESS DIGEST(7).DOCX",
+      "filename_title": "BUSINESS DIGEST(7)",
+      "content_title": "BUSINESS DIGEST",
+      "reason": "duplicate_title_all_matched"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\BUSINESS DIGEST(8).DOCX",
+      "filename_title": "BUSINESS DIGEST(8)",
+      "content_title": "BUSINESS DIGEST",
+      "reason": "duplicate_title_all_matched"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\BUSINESS DIGEST(9).DOCX",
+      "filename_title": "BUSINESS DIGEST(9)",
+      "content_title": "BUSINESS DIGEST",
+      "reason": "duplicate_title_all_matched"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Business Digest.DOCX",
+      "filename_title": "Business Digest",
+      "content_title": "Business Digest",
+      "reason": "duplicate_title_all_matched"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\PARENT & CHILD(11).DOCX",
+      "filename_title": "PARENT & CHILD(11)",
+      "content_title": "PARENT & CHILD",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\PARENT & CHILD(12).DOCX",
+      "filename_title": "PARENT & CHILD(12)",
+      "content_title": "PARENT & CHILD",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\PARENT & CHILD(13).DOCX",
+      "filename_title": "PARENT & CHILD(13)",
+      "content_title": "PARENT & CHILD",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\PARENT & CHILD(14).DOCX",
+      "filename_title": "PARENT & CHILD(14)",
+      "content_title": "PARENT & CHILD",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Parent & Child(2).DOCX",
+      "filename_title": "Parent & Child(2)",
+      "content_title": "Parent & Child",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Parent & Child(3).DOCX",
+      "filename_title": "Parent & Child(3)",
+      "content_title": "Parent & Child",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Parent & Child(4).DOCX",
+      "filename_title": "Parent & Child(4)",
+      "content_title": "Parent & Child",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\PARENT & CHILD(5).DOCX",
+      "filename_title": "PARENT & CHILD(5)",
+      "content_title": "PARENT & CHILD",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\PARENT & CHILD(6).DOCX",
+      "filename_title": "PARENT & CHILD(6)",
+      "content_title": "PARENT & CHILD",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\PARENT & CHILD(7).DOCX",
+      "filename_title": "PARENT & CHILD(7)",
+      "content_title": "PARENT & CHILD",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\PARENT & CHILD(8).DOCX",
+      "filename_title": "PARENT & CHILD(8)",
+      "content_title": "PARENT & CHILD",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\PARENT & CHILD(9).DOCX",
+      "filename_title": "PARENT & CHILD(9)",
+      "content_title": "PARENT & CHILD",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Parent & Child.DOCX",
+      "filename_title": "Parent & Child",
+      "content_title": "Parent & Child",
+      "reason": "duplicate_article_id"
+    },
+    {
+      "file": "smoking_downloads\\batch_01\\Wine Talk.DOCX",
+      "filename_title": "Wine Talk",
+      "content_title": "Wine Talk",
+      "reason": "duplicate_article_id"
+    }
+  ],
+  "missing_articles_count": 85,
+  "missing_articles_sample": [
+    "Tobacco1.0-24187",
+    "Tobacco1.0-18826",
+    "Tobacco1.0-19638",
+    "Tobacco1.0-20504",
+    "Tobacco1.0-17311",
+    "Tobacco1.0-1243",
+    "Tobacco1.0-1563",
+    "Tobacco1.0-3403",
+    "Tobacco1.0-24978",
+    "Tobacco1.0-3076",
+    "Tobacco1.0-7396",
+    "Tobacco1.0-9977",
+    "Tobacco1.0-6973",
+    "Tobacco1.0-24874",
+    "Tobacco1.0-2847",
+    "Tobacco1.0-20055",
+    "Tobacco1.0-10539",
+    "Tobacco1.0-21769",
+    "Tobacco1.0-7805",
+    "Tobacco1.0-10535"
+  ]
+}

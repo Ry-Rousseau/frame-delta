@@ -15,10 +15,10 @@ Expected structure:
         smoking.json
         samesex.json
 
-Output:
-    {topic}_corpus.parquet
-    {topic}_corpus.csv
-    {topic}_assembly_report.json
+Output (in assembled/ subfolder):
+    assembled/{topic}_corpus.parquet
+    assembled/{topic}_corpus.csv
+    assembled/{topic}_assembly_report.json
 """
 
 import json
@@ -42,12 +42,16 @@ def get_topic_config(topic):
     else:
         downloads_dir = f"{topic}_downloads"
 
+    # Output goes to assembled/ subfolder
+    output_dir = "assembled"
+
     return {
         "input_json": f"{topic}.json",
         "downloads_dir": downloads_dir,
-        "output_parquet": f"{topic}_corpus.parquet",
-        "output_csv": f"{topic}_corpus.csv",
-        "report_file": f"{topic}_assembly_report.json",
+        "output_dir": output_dir,
+        "output_parquet": f"{output_dir}/{topic}_corpus.parquet",
+        "output_csv": f"{output_dir}/{topic}_corpus.csv",
+        "report_file": f"{output_dir}/{topic}_assembly_report.json",
     }
 
 
@@ -211,9 +215,14 @@ def main():
 
     print(f"  Found {len(docx_files)} DOCX files in downloads/")
 
+    # Create output directory
+    output_dir = base_path / config["output_dir"]
+    output_dir.mkdir(exist_ok=True)
+
     # Match and assemble
     print("\nMatching files to articles...")
     matched = []
+    matched_article_ids = set()  # Track matched articles to prevent duplicates
     unmatched_files = []
     unmatched_articles = set(nyt_articles.keys())
 
@@ -238,17 +247,38 @@ def main():
             match_method = "content"
 
         if match:
-            # Handle potential duplicates
+            # Handle potential duplicates in title_lookup (multiple articles with same title)
             if isinstance(match, list):
                 # Multiple articles with same title - take first unmatched
+                found_unmatched = False
                 for article_id, article in match:
-                    if article_id in unmatched_articles:
+                    if article_id not in matched_article_ids:
                         match = (article_id, article)
+                        found_unmatched = True
                         break
-                else:
-                    match = match[0]  # fallback to first
+                if not found_unmatched:
+                    # All articles with this title already matched - skip this DOCX
+                    unmatched_files.append({
+                        "file": str(docx_path.relative_to(base_path)),
+                        "filename_title": filename_title,
+                        "content_title": content_title,
+                        "reason": "duplicate_title_all_matched"
+                    })
+                    continue
 
             article_id, article = match
+
+            # Skip if this article_id was already matched (prevents duplicate DOCX -> same article)
+            if article_id in matched_article_ids:
+                unmatched_files.append({
+                    "file": str(docx_path.relative_to(base_path)),
+                    "filename_title": filename_title,
+                    "content_title": content_title,
+                    "reason": "duplicate_article_id"
+                })
+                continue
+
+            matched_article_ids.add(article_id)
             unmatched_articles.discard(article_id)
 
             # Extract text
@@ -281,8 +311,13 @@ def main():
                 "content_title": content_title
             })
 
-    print(f"  Matched: {len(matched)}")
-    print(f"  Unmatched files: {len(unmatched_files)}")
+    # Count duplicate skips
+    duplicate_skips = sum(1 for f in unmatched_files if f.get("reason", "").startswith("duplicate"))
+    no_match = len(unmatched_files) - duplicate_skips
+
+    print(f"  Matched: {len(matched)} unique articles")
+    print(f"  Skipped (duplicates): {duplicate_skips}")
+    print(f"  Unmatched files (no match): {no_match}")
     print(f"  Missing articles: {len(unmatched_articles)}")
 
     # Build DataFrame
@@ -305,9 +340,11 @@ def main():
     report = {
         "total_nyt_articles": len(nyt_articles),
         "docx_files_found": len(docx_files),
-        "matched": len(matched),
-        "unmatched_files": unmatched_files[:50],  # truncate for readability
-        "unmatched_files_count": len(unmatched_files),
+        "matched_unique": len(matched),
+        "duplicate_skips": duplicate_skips,
+        "unmatched_no_match": no_match,
+        "unmatched_files_sample": [f for f in unmatched_files if not f.get("reason", "").startswith("duplicate")][:30],
+        "duplicate_files_sample": [f for f in unmatched_files if f.get("reason", "").startswith("duplicate")][:20],
         "missing_articles_count": len(unmatched_articles),
         "missing_articles_sample": list(unmatched_articles)[:20],
     }
