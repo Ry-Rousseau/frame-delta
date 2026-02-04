@@ -3,7 +3,8 @@
     "allow": [
       "Bash(python:*)",
       "Bash(wc:*)",
-      "Bash(conda activate:*)"
+      "Bash(conda activate:*)",
+      "WebFetch(domain:docs.wandb.ai)"
     ]
   }
 }
