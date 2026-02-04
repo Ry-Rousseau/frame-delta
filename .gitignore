@@ -221,3 +221,12 @@ media_frames_corpus/immigration_corpus.csv
 media_frames_corpus/immigration_corpus.csv
 media_frames_corpus/immigration_corpus.parquet
 media_frames_corpus/final_data/
+media_frames_corpus/samesex_downloads/
+media_frames_corpus/smoking_downloads/
+media-frames-corpus/**/*.csv
+
+data/
+notebooks/wandb/
+media_frames_corpus/assembled/immigration_corpus.csv
+media_frames_corpus/assembled/samesex_corpus.csv
+media_frames_corpus/assembled/smoking_corpus.csv
