@@ -135,4 +135,4 @@ HuggingFace Datasets: copenlu/mm-framing.
 
 ## License
 
-Research use only.
+MIT License
