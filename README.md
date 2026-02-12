@@ -2,6 +2,9 @@
 
 A lightweight multi-label classifier that detects 15 standard media frames in news articles, enabling quantitative comparison of framing bias between sources. Built on Longformer with topic injection, it outperforms prior GenAI approaches (Mistral-7B) on the Media Frames Corpus while being 47x smaller.
 
+READ THE FULL [`WRITE-UP`]([https://huggingface.co/ry-rousseau/longformer-framing-gold](https://ry-rousseau.github.io/2026/02/09/longformer-framing-classifier.html))
+
+
 ## Quick Start
 
 ```python
